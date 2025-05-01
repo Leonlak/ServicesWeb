@@ -1,0 +1,79 @@
+.no-webp .inicio {
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio {
+    background-image: url(../img/header.webp);
+}
+
+.header {
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+
+    &.inicio {
+        background-position: center center;
+        background-size: cover;
+
+        @include tablet {
+            min-height: 70rem;
+        }
+
+        .contenido-header {
+            @include tablet {
+                min-height: 70rem;
+            }
+        }
+    }
+}
+
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+        text-align: left;
+        color: $blanco;
+        font-weight: 900;
+        font-size: 4rem;
+        z-index: 1;
+        overflow: hidden;
+        //line-height: 2;
+        //max-width: 60rem;
+        
+    }
+
+    h2:before{
+        content: ' ';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, trasparent 0%, #000 5%, #000 100%);
+        animation: animate 4.4s linear forwards;
+    }
+
+    @keyframes animate 
+    {
+        0%
+        {
+            left: 50%;
+        }
+        100%
+        {
+           left: -20%;
+        }
+        
+    }
+   
+
+    h2 span{
+        color: red;  
+      }
+
+    .logo{
+        width: 50px;
+    }
+
+   
+
+}
